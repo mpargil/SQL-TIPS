@@ -1,0 +1,14 @@
+# Finding Column names in a whole database [GENERIC Formula]
+select  
+        s.[name]            'Schema',
+        t.[name]            'Table',
+        c.[name]            'Column',
+        d.[name]            'Data Type'
+from        sys.schemas s
+inner join  sys.tables  t
+on s.schema_id = t.schema_id
+inner join  sys.columns c
+on t.object_id = c.object_id
+inner join  sys.types   d
+on c.user_type_id = d.user_type_id
+where c.name like '%refrigeran%'
