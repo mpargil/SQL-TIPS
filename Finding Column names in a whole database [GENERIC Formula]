@@ -1,0 +1,4 @@
+select name of your column, count (name of your column) as countofYourColumn
+from salesforce.WorkOrderLineItem
+group by name of your column
+Order by countofYourColumn desc
